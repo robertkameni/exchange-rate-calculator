@@ -1,0 +1,167 @@
+:root {
+    --primary-color: #18eec0;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    background: linear-gradient(to left, #F29492, #114357);
+    display: flex;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-weight: bolder;
+    font-size: 2rem;
+
+    animation-name: slideIn;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+p {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.slideIn {
+
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    overflow: hidden;
+}
+
+@keyframes slideIn {
+    from {
+        margin-left: 50%;
+        width: 110%;
+    }
+
+    to {
+        margin-right: -80%;
+        width: 100%;
+    }
+}
+
+.btn {
+    color: black;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+.money-img {
+    width: 175px;
+    animation: turner 4s infinite linear;
+}
+
+@keyframes turner {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.currency {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.currency select {
+    padding: 10px 20px 10px 10px;
+    background-color: rgba(67, 116, 223, 0.719);
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+
+.currency input {
+    border: none;
+    background-color: rgb(68, 65, 65);
+    color: white;
+    font-size: 15px;
+    padding: 8px 20px 8px 10px;
+    text-align: right;
+}
+
+.swap-rate-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rate {
+    color: var(--primary-color);
+    font-size: 14px;
+    padding: 0 10px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+select:focus,
+input:focus,
+button:focus {
+    outline: none;
+}
+
+@media(max-width: 600px) {
+    body {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    h1 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 1rem;
+
+    }
+
+    .money-img {
+        width: 140px;
+    }
+
+    .currency input {
+        width: 200px;
+    }
+
+    @keyframes slideIn {
+        from {
+            margin-left: 2%;
+            width: 75%
+        }
+
+        to {
+            margin-right: -10%;
+            width: 75%;
+        }
+    }
+}
